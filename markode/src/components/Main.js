@@ -6,11 +6,11 @@ function Main() {
             <div className="textBlocs">
                 <div className="mdBox">
                     <textarea className="textEditors"/>
-                    <button>Effacer tout</button>                    
+                    <button className="editorButtons">Effacer tout</button>                    
                 </div>
                 <div className="htmlBox">
                     <textarea className="textEditors"/>
-                    <button>Exporter</button>    
+                    <button className="editorButtons">Exporter</button>    
                 </div>
             </div>
         </div>

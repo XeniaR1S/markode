@@ -48,6 +48,12 @@
   height: 90%;
   background-color: #3D3D3D;
   color: #C4C4C4;
+  border: none;
+}
+.editorButtons {
+  background-color: #3D3D3D;
+  color: #C4C4C4;
+  border: none;
 }
 
 /* ---------- END main.js ---------- */
