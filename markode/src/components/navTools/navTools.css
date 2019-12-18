@@ -1,5 +1,12 @@
 .navTool {
     width: 20%;
-    height: 100wh;
-    background-color: #222222;
+    height: 100vh;
+    background-color: #8d8c8c;
+    color: #222;
+}
+
+.titleTool {
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
 }
