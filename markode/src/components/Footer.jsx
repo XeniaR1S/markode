@@ -1,27 +1,16 @@
-import React, { Component } from "react"
+import React from "react"
+import CounterText from "./CounterText"
+import Counter from "./Counter"
 
-class Footer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-       
+class Footer extends React.Component{
+    render() {
+      return (
+        <div id="footer">
+         < CounterText countChar={this.props.countChar}/>
+         < Counter numChar={this.props.numChar}/>
+        </div>
+      );
     }
-    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  handleInputChange(e) {
-    this.setState({ [e.target.name]: e.target.value })
-  }
-  render() {
-    console.log(this.state)
-    return(
-
-
-    )
-  }
-}
-
-};
-
-export default Footer;
+  export default Footer
