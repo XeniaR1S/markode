@@ -11,9 +11,38 @@
 
 /* ---------- BEGIN main.js ---------- */
 
-.navbar{
-  
+.navbar_container {
+  display: flex;
+  background-color: #656565;
+  justify-content: space-around ;
+  align-items: center;
+  height: 10vh;
 }
+.search_container {
+  display: flex;
+  flex-direction: row;
+}
+#searchField {
+  display: flex;
+  height: 5vh;
+  width: 30vw;
+}
+
+.navbar_search_btn {
+  display: flex;
+  height: 5vh;
+  width: 3vw;
+  cursor: pointer;
+}
+.search_method{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  height: 80%;
+  justify-content: space-evenly;
+}
+
+
 
 /* ---------- END main.js ---------- */
 
