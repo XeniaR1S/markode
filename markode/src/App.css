@@ -1,0 +1,31 @@
+/* ---------- BEGIN app.js ---------- */
+
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #656565;
+}
+
+/* ---------- END app.js ---------- */
+
+/* ---------- BEGIN main.js ---------- */
+
+.navbar{
+  
+}
+
+/* ---------- END main.js ---------- */
+
+/* ---------- BEGIN main.js ---------- */
+
+.main {
+  background-color: #656565;
+  width: 80vw;
+  height: 80vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  margin-left: 0px;
+}
+
+/* ---------- END main.js ---------- */
