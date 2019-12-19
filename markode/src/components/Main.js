@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import NavTools from './navTools/NavTools';
 import Navbar from './Navbar'
+import Highlighter from "react-highlight-words";
 
 class Main extends React.Component {
     constructor (props) {
@@ -36,21 +37,11 @@ class Main extends React.Component {
         this.setState({input: event.target.value})
     }
 
-    // getWord = () =>{
-    //     this.state.text.includes(event.target.value)
-    //     if (this.state.text === event.target.value){
-    //         console.log(this.state.text)
-    //     }
-    // }
-
-
-
-
     render() {
         return (
             <div>
                 <header className="navbar">
-                    <Navbar searchField={this.searchField} input={this.state.input} />
+                    <Navbar onSearch={this.onSearch} searchField={this.searchField} input={this.state.input} />
                 </header>
                 <div className="main">
                     <NavTools />
@@ -63,10 +54,11 @@ class Main extends React.Component {
                             <button className="editorButtons">Effacer tout</button>                    
                         </div>
                         <div className="htmlBox">
-                            <textarea 
-                                readOnly
-                                className="textEditors"
-                                value={this.state.text}></textarea>
+                            <Highlighter 
+                            className='textEditors'
+                            searchWords={[this.state.input]}
+                            textToHighlight={this.state.text}
+                            />
                             <button className="editorButtons">Exporter</button>    
                         </div>
                     </div>
