@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 
 
-//button onClick = {props.getWords}
 function Navbar(props) {
   return (
     <div className = 'navbar_container'>
@@ -16,11 +15,11 @@ function Navbar(props) {
         </button>
       </div>
       <div className='search_method'>
-        <label for='word'>
+        <label htmlFor='word'>
           <input type='radio' id='word' name='method' value='word' />
           Rechercher par mot
         </label>
-        <label for="string">
+        <label htmlFor="string">
           <input type='radio' id='string' name='method' value='string' />
           Rechercher par chaîne
         </label>
