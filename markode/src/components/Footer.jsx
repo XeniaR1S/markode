@@ -4,7 +4,7 @@ import Counter from "./Counter"
 class Footer extends React.Component{
     render() {
       return (
-        <div id="footer">
+        <div className="footer">
           < Counter numChar={this.props.numChar}/>
         </div>
       );
