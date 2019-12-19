@@ -10,7 +10,7 @@ function Navbar(props) {
       </div>
       <div className='search_container'>
         <input onChange={props.searchField} value={props.input} id='searchField' type ='text' placeholder ='Rechercher un mot ou chaîne'></input>
-        <button value ='search'>
+        <button onClick={props.onSearch} value ='search'>
           <img src='icon_search.svg' className='navbar_search_btn' alt='button_search' />
         </button>
       </div>

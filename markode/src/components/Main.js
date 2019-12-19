@@ -1,13 +1,16 @@
 import React from 'react';
 import Footer from './Footer';
 import NavTools from './navTools/NavTools';
+import Navbar from './Navbar'
+import Highlighter from "react-highlight-words";
 
 class Main extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
             text: "",
-            numChar: 0
+            numChar: 0,
+            input: ''
         }
         this.mdToHtml = this.mdToHtml.bind(this);
         this.countChar = this.countChar.bind(this);
@@ -29,11 +32,19 @@ class Main extends React.Component {
         this.mdToHtml(e)
         this.countChar(e)
     }
+
+    searchField = (event)=>{
+        this.setState({input: event.target.value})
+    }
+
     render() {
         return (
-            <div className="main">
-                <NavTools />
-                <div className="mainTools">
+            <div>
+                <header className="navbar">
+                    <Navbar onSearch={this.onSearch} searchField={this.searchField} input={this.state.input} />
+                </header>
+                <div className="main">
+                    <NavTools />
                     <div className="textBlocs">
                         <div className="mdBox">
                             <textarea 
@@ -43,10 +54,11 @@ class Main extends React.Component {
                             <button className="editorButtons">Effacer tout</button>                    
                         </div>
                         <div className="htmlBox">
-                            <textarea 
-                                readOnly
-                                className="textEditors"
-                                value={this.state.text}></textarea>
+                            <Highlighter 
+                            className='textEditors'
+                            searchWords={[this.state.input]}
+                            textToHighlight={this.state.text}
+                            />
                             <button className="editorButtons">Exporter</button>    
                         </div>
                     </div>
