@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import Collapsible from 'react-collapsible';
 
 export default class NavTools extends Component {
   render() {
