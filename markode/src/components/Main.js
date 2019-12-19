@@ -1,14 +1,5 @@
 import React from 'react';
 
-const MarkdownIt = require('markdown-it')
-const md = new MarkdownIt();
-let mdText = 
-  (`- bla
-  - blabla
-  - blablabla`
-  )
-let result = md.render(mdText);
-
 class Main extends React.Component {
     constructor (props) {
         super(props)
@@ -16,22 +7,15 @@ class Main extends React.Component {
             text: ""
         }
         this.mdToHtml = this.mdToHtml.bind(this)
-        this.onChange = this.onChange.bind(this)
     }
-    onChange(e){
-        this.setState({
-            text: e.target.value
-        });
-    }
-    mdToHtml() {
+    mdToHtml(e){
         const MarkdownIt = require('markdown-it')
         const md = new MarkdownIt();
-        let mdText = 
-        (`- bla
-        - blabla
-        - blablabla`
-        )
-        let result = md.render(mdText);
+        let text = e.target.value;
+        let result = md.render(text);
+        this.setState({
+            text: result
+        });
     }
     render() {
         return (
@@ -40,12 +24,14 @@ class Main extends React.Component {
                     <div className="mdBox">
                         <textarea 
                             className="textEditors"
-                            onChange={this.onChange}>
+                            onChange={this.mdToHtml}>
                         </textarea>
                         <button className="editorButtons">Effacer tout</button>                    
                     </div>
                     <div className="htmlBox">
-                        <textarea className="textEditors">{result}</textarea>
+                        <textarea 
+                            className="textEditors"
+                            value={this.state.text}></textarea>
                         <button className="editorButtons">Exporter</button>    
                     </div>
                 </div>
