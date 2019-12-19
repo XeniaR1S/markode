@@ -43,6 +43,7 @@ class Main extends React.Component {
                     </div>
                     <div className="htmlBox">
                         <textarea 
+                            readOnly
                             className="textEditors"
                             value={this.state.text}></textarea>
                         <button className="editorButtons">Exporter</button>    
