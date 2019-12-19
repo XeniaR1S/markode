@@ -3,13 +3,13 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
 
-class App extends React.Component{
-  constructor(){
+class App extends React.Component {
+  constructor() {
     super();
     this.state = {
-      input:'',
-    }
-    this.searchField=this.searchField.bind(this)
+      input: ''
+    };
+    this.searchField = this.searchField.bind(this);
   }
   searchField = (event)=>{
     this.setState({input: event.target.value})
@@ -18,7 +18,7 @@ class App extends React.Component{
     return (
       <div className="App">
         <header className="navbar">
-          <Navbar searchField={this.searchField} input={this.state.input}/>
+          <Navbar searchField={this.searchField} input={this.state.input} />
         </header>
         <Main />
       </div>
@@ -26,4 +26,4 @@ class App extends React.Component{
   }
 }
 
-  export default App;
+export default App;

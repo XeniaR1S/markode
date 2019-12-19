@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import NavTools from './navTools/NavTools';
 
 class Main extends React.Component {
     constructor (props) {
@@ -31,6 +32,7 @@ class Main extends React.Component {
     render() {
         return (
             <div className="main">
+                <NavTools />
                 <div className="textBlocs">
                     <div className="mdBox">
                         <textarea 
