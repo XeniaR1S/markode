@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
 
+
 class App extends React.Component {
   constructor() {
     super();
@@ -20,7 +21,8 @@ class App extends React.Component {
         <header className="navbar">
           <Navbar searchField={this.searchField} input={this.state.input} />
         </header>
-        <Main />
+        <Main/>
+
       </div>
     );
   }
