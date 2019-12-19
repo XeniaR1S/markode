@@ -1,7 +1,7 @@
 import React from 'react';
-import Main from './components/Main';
 import './App.css';
 import Navbar from './components/Navbar'
+import AllFooter from './components/AllFooter'
 
 class App extends React.Component{
   constructor(){
@@ -24,9 +24,7 @@ class App extends React.Component{
           <Navbar searchField={this.searchField} input={this.state.input}/>
         </header>
         <Main />
+      < AllFooter/>
       </div>
     );
   }
-}
-
-export default App;
