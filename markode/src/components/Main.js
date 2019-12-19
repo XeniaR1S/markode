@@ -7,6 +7,7 @@ class Main extends React.Component {
         super(props)
         this.state = {
             text: "",
+            mdText: "",
             numChar: 0
         }
         this.mdToHtml = this.mdToHtml.bind(this);
@@ -17,10 +18,11 @@ class Main extends React.Component {
     mdToHtml(event){
         const MarkdownIt = require('markdown-it')
         const md = new MarkdownIt();
-        let text = event.target.value;
-        let result = md.render(text);
+        let mdText = event.target.value;
+        let result = md.render(mdText);
         this.setState({
-            text: result
+            text: result,
+            mdText: mdText
         });
     }
     countChar(event){
@@ -31,7 +33,7 @@ class Main extends React.Component {
         this.countChar(e)
     }
     deleteMD() {
-        this.setState({text: ''})
+        this.setState({mdText: ''})
     }
     render() {
         return (
@@ -40,11 +42,14 @@ class Main extends React.Component {
                 <div className="mainTools">
                     <div className="textBlocs">
                         <div className="mdBox">
-                            <textarea 
+                            <textarea
                                 className="textEditors"
-                                onChange={this.combinedMethods}>
+                                onChange={this.combinedMethods}
+                                value={this.state.mdText}>
                             </textarea>
-                            <button className="editorButtons">Effacer tout</button>                    
+                            <button 
+                                className="editorButtons"
+                                onClick={this.deleteMD}>Effacer tout</button>                    
                         </div>
                         <div className="htmlBox">
                             <textarea 
