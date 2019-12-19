@@ -33,23 +33,25 @@ class Main extends React.Component {
         return (
             <div className="main">
                 <NavTools />
-                <div className="textBlocs">
-                    <div className="mdBox">
-                        <textarea 
-                            className="textEditors"
-                            onChange={this.combinedMethods}>
-                        </textarea>
-                        <button className="editorButtons">Effacer tout</button>                    
+                <div className="mainTools">
+                    <div className="textBlocs">
+                        <div className="mdBox">
+                            <textarea 
+                                className="textEditors"
+                                onChange={this.combinedMethods}>
+                            </textarea>
+                            <button className="editorButtons">Effacer tout</button>                    
+                        </div>
+                        <div className="htmlBox">
+                            <textarea 
+                                readOnly
+                                className="textEditors"
+                                value={this.state.text}></textarea>
+                            <button className="editorButtons">Exporter</button>    
+                        </div>
                     </div>
-                    <div className="htmlBox">
-                        <textarea 
-                            readOnly
-                            className="textEditors"
-                            value={this.state.text}></textarea>
-                        <button className="editorButtons">Exporter</button>    
-                    </div>
+                    <Footer countChar={this.countChar} numChar={this.state.numChar}/>
                 </div>
-                <Footer countChar={this.countChar} numChar={this.state.numChar}/>
             </div>
         )
     }
