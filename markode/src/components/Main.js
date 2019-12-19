@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from './Footer';
 import NavTools from './navTools/NavTools';
+import Navbar from './Navbar'
+import Highlighter from "react-highlight-words";
 
 class Main extends React.Component {
     constructor (props) {
@@ -8,7 +10,9 @@ class Main extends React.Component {
         this.state = {
             text: "",
             mdText: "",
-            numChar: 0
+            numChar: 0,
+            countWord: 0,
+            input: ""
         }
         this.mdToHtml = this.mdToHtml.bind(this);
         this.countChar = this.countChar.bind(this);
@@ -28,18 +32,37 @@ class Main extends React.Component {
     countChar(event){
         this.setState({numChar: event.target.value.length});
     }
+    counterWords(event) {
+        let counttext = event.target.value;
+        let table = counttext.split(/[\s|.|,|'|:|;|?|!|~|*|#|(|)|-|_|<|>]+/g);
+        if (table[table.length-1] === "") {
+            table.splice(table.length-1, 1)
+        }
+        let result = table.length;
+        return result
+    }
     combinedMethods(e) {
         this.mdToHtml(e)
         this.countChar(e)
+        this.handleCountWords(e)
+    }
+    handleCountWords(event){
+        this.setState({countWord: this.counterWords(event)});
+    }
+    searchField = (event)=>{
+        this.setState({input: event.target.value})
     }
     deleteMD() {
         this.setState({mdText: ''})
     }
     render() {
         return (
-            <div className="main">
-                <NavTools />
-                <div className="mainTools">
+            <div>
+                <header className="navbar">
+                    <Navbar onSearch={this.onSearch} searchField={this.searchField} input={this.state.input} />
+                </header>
+                <div className="main">
+                    <NavTools />
                     <div className="textBlocs">
                         <div className="mdBox">
                             <textarea
@@ -52,14 +75,15 @@ class Main extends React.Component {
                                 onClick={this.deleteMD}>Effacer tout</button>                    
                         </div>
                         <div className="htmlBox">
-                            <textarea 
-                                readOnly
-                                className="textEditors"
-                                value={this.state.text}></textarea>
+                            <Highlighter 
+                            className='textEditors'
+                            searchWords={[this.state.input]}
+                            textToHighlight={this.state.text}
+                            />
                             <button className="editorButtons">Exporter</button>    
                         </div>
                     </div>
-                    <Footer countChar={this.countChar} numChar={this.state.numChar}/>
+                <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
                 </div>
             </div>
         )

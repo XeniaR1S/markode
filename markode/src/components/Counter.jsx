@@ -1,12 +1,13 @@
 import React from 'react'
 
-class Counter extends React.Component{
-    render() {
-      return (
-          <p id="counter">Votre texte contient {this.props.numChar} caractère(s)</p>
-      );
-    }
-  }
+function Counter({countWord, numChar}){
+    return (
+      <div>
+        <p id="counter">Votre texte contient {numChar} caractère(s)</p>
+        <p id="counter-words">Votre texte contient {countWord} mot(s)</p>
+      </div>
+  );
+}
 
   export default Counter
   
