@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from './Footer';
 import NavTools from './navTools/NavTools';
+import Navbar from './Navbar'
+import Highlighter from "react-highlight-words";
 
 class Main extends React.Component {
   constructor (props) {
@@ -8,7 +10,8 @@ class Main extends React.Component {
     this.state = {
       text: "",
       numChar: 0,
-      countWord: 0
+      countWord: 0,
+      input: ''
     }
     this.mdToHtml = this.mdToHtml.bind(this);
     this.countChar = this.countChar.bind(this);
@@ -50,25 +53,37 @@ class Main extends React.Component {
     this.setState({countWord: this.counterWords(event)});
   }
  
+
+    searchField = (event)=>{
+        this.setState({input: event.target.value})
+    }
+
     render() {
         return (
-            <div className="main">
-                <NavTools />
-                <div className="textBlocs">
-                    <div className="mdBox">
-                        <textarea 
-                            className="textEditors"
-                            onChange={this.combinedMethods}>
-                        </textarea>
-                        <button className="editorButtons">Effacer tout</button>                    
+            <div>
+                <header className="navbar">
+                    <Navbar onSearch={this.onSearch} searchField={this.searchField} input={this.state.input} />
+                </header>
+                <div className="main">
+                    <NavTools />
+                    <div className="textBlocs">
+                        <div className="mdBox">
+                            <textarea 
+                                className="textEditors"
+                                onChange={this.combinedMethods}>
+                            </textarea>
+                            <button className="editorButtons">Effacer tout</button>                    
+                        </div>
+                        <div className="htmlBox">
+                            <Highlighter 
+                            className='textEditors'
+                            searchWords={[this.state.input]}
+                            textToHighlight={this.state.text}
+                            />
+                            <button className="editorButtons">Exporter</button>    
+                        </div>
                     </div>
-                    <div className="htmlBox">
-                        <textarea 
-                            readOnly
-                            className="textEditors"
-                            value={this.state.text}></textarea>
-                        <button className="editorButtons">Exporter</button>    
-                    </div>
+                    <Footer countChar={this.countChar} numChar={this.state.numChar}/>
                 </div>
                 <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
             </div>
