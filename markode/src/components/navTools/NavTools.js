@@ -10,9 +10,7 @@ export default class NavTools extends Component {
     this.onClickAttribut = this.onClickAttribut.bind(this);
   }
   onClickAttribut(e) {
-    // console.log(e.target.value);
     this.setState({
-      // [e.target.name]: e.target.value
       attributMd: e.target.value
     });
   }
