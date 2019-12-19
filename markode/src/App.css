@@ -1,3 +1,10 @@
+/* ---------- GENERAL --------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
 /* ---------- BEGIN app.js ---------- */
 
 .app {
@@ -21,3 +28,52 @@
 }
 
 /* ---------- END main.js ---------- */
+
+/* ---------- BEGIN NavTool.js ----- */
+.titleTool {
+  padding-left: .5em;
+  border: 1px solid #1f1f20;
+  color: #1f1f20;
+
+}
+
+.navTool {
+  width: 20%;
+  height: 100vh;
+  background-color: #8d8c8c;
+  color: #222;
+}
+
+.titleTool {
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.accordion {
+  margin-left: 1em;
+}
+
+.accordion section h5 {
+  display: none;
+  margin-left: 1.5em;
+  color: rgb(70, 71, 80);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.accordion section a {
+  color: rgb(41, 41, 46);
+  text-decoration: none;
+}
+
+.accordion section a:hover {
+  text-decoration: underline;
+}
+
+.accordion section:target h5 {
+  /* margin-left: 12em; */
+  display: block;
+}
+
+/* ---------- END NavTool.js --------- */
