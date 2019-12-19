@@ -20,10 +20,7 @@ class AllFooter extends Component {
   
   render() {
     return (
-     <div>
-        <Footer countChar={this.countChar}
-        numChar={this.state.numChar}/>
-      </div>
+        <Footer countChar={this.countChar} numChar={this.state.numChar}/>
     );
   }
 }
