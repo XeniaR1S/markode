@@ -80,29 +80,31 @@ class Main extends React.Component {
                 </header>
                 <div className="main">
                     <NavTools />
-                    <div className="textBlocs">
-                        <div className="mdBox">
-                            <textarea
-                                className="textEditors"
-                                onChange={this.combinedMethods}
-                                value={this.state.mdText}>
-                            </textarea>
-                            <button 
-                                className="editorButtons"
-                                onClick={this.deleteMD}>Effacer tout</button>                    
+                    <div className="regroupBlocs">
+                        <div className="textBlocs">
+                            <div className="mdBox">
+                                <textarea
+                                    className="textEditors"
+                                    onChange={this.combinedMethods}
+                                    value={this.state.mdText}>
+                                </textarea>
+                                <button 
+                                    className="editorButtons"
+                                    onClick={this.deleteMD}>Effacer tout</button>                    
+                            </div>
+                            <div className="htmlBox">
+                                <Highlighter 
+                                className='textEditors'
+                                autoEscape={true}
+                                searchWords={[this.state.input]}
+                                textToHighlight={this.state.text}
+                                />
+                                <button className="editorButtons">Exporter</button>    
+                            </div>
                         </div>
-                        <div className="htmlBox">
-                            <Highlighter 
-                            className='textEditors'
-                            autoEscape={true}
-                            searchWords={[this.state.input]}
-                            textToHighlight={this.state.text}
-                            />
-                            <button className="editorButtons">Exporter</button>    
-                        </div>
+                        <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
                     </div>
-                <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
-                </div>
+                    </div>
             </div>
         )
     }
