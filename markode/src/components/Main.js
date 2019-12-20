@@ -37,7 +37,7 @@ class Main extends React.Component {
     let result = md.render(mdText);
     this.setState({
       text: result,
-      mdText: mdText
+      mdText
     });
   }
   countChar(event) {
@@ -64,11 +64,11 @@ class Main extends React.Component {
     this.setState({ input: event.target.value });
   };
 
-  combinedMethods(e) {
-    this.mdToHtml(e);
-    this.countChar(e);
-    this.handleCountWords(e);
-  }
+  // combinedMethods(e) {
+  //   this.mdToHtml(e);
+  //   this.countChar(e);
+  //   this.handleCountWords(e);
+  // }
   handleCountWords(event) {
     this.setState({ countWord: this.counterWords(event) });
   }
@@ -133,7 +133,7 @@ class Main extends React.Component {
           />
         </header>
         <div className="main">
-          <NavTools />
+          <NavTools onClickAttribut={this.onClickAttribut} />
           <div className="regroupBlocs">
             <div className="textBlocs">
               <div className="mdBox">
