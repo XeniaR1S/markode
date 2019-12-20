@@ -3,6 +3,7 @@ import Footer from './Footer';
 import NavTools from './navTools/NavTools';
 import Navbar from './Navbar';
 import Highlighter from 'react-highlight-words';
+import { save } from 'save-file';
 const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 
@@ -122,6 +123,9 @@ class Main extends React.Component {
     }
     this.setState({ seoTool: result });
   }
+
+    fileExport = () =>save(this.state.text, "fichier.html");
+
   render() {
     return (
       <div>
@@ -153,7 +157,7 @@ class Main extends React.Component {
                   searchWords={[this.state.input]}
                   textToHighlight={this.state.text}
                 />
-                <button className="editorButtonsTwo">Exporter</button>
+                <button onClick={this.fileExport} className="editorButtons">Exporter</button>
               </div>
             </div>
             <Footer

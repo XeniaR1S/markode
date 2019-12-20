@@ -113,9 +113,7 @@ body {
   border: none;
 }
 
-.editorButtonsTwo {
-  visibility: hidden;
-}
+
 
 #footer {
   display: flex;
