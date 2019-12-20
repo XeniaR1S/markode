@@ -114,9 +114,17 @@ body {
 }
 .footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   height: 15%;
+}
+.counters {
+  display: flex;
+  flex-direction: column;  
+}
+.seoCounters {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---------- END main.js ---------- */

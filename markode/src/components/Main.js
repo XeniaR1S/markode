@@ -12,12 +12,14 @@ class Main extends React.Component {
             mdText: "",
             numChar: 0,
             countWord: 0,
-            input: ""
+            input: "",
+            seoTool: []
         }
         this.mdToHtml = this.mdToHtml.bind(this);
         this.countChar = this.countChar.bind(this);
         this.combinedMethods = this.combinedMethods.bind(this);
         this.deleteMD = this.deleteMD.bind(this);
+        this.seoTool = this.seoTool.bind(this);
     }
     mdToHtml(event){
         const MarkdownIt = require('markdown-it')
@@ -72,6 +74,30 @@ class Main extends React.Component {
         result = count
         return result
     }
+    seoTool() {
+        let text = this.state.text
+        let filters = ["h1","h2","h3","h4", "h5", "h6", "a" ,"p"]
+        let endFilters = ["/h1","/h2","/h3","/h4","/h5", "/h6","/a","/p"]
+        let result = [0, 0, 0, 0, 0, 0, 0, 0]
+        let keyword = this.state.input
+        let table = text.split((/[\s|.|,|'|:|;|?|!|~|*|#|(|)|-|_||>|<]+/g))
+        for (let i = 0 ; i < table.length ; i++) {
+            for (let j = 0 ; j < filters.length ; j++) {
+                if (table[i] === filters[j]) {
+                    let k = i
+                    while(table[k] !== endFilters[j]) {
+                        k++
+                    }
+                    for (let l = i ; l <= k ; l++) {
+                        if (table[l] === keyword) {
+                        result[j]++
+                        }
+                    }
+                }
+            }
+        }
+        this.setState({seoTool: result})
+    }
     render() {
         return (
             <div>
@@ -102,7 +128,13 @@ class Main extends React.Component {
                                 <button className="editorButtons">Exporter</button>    
                             </div>
                         </div>
-                        <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
+                        <Footer 
+                            countChar={this.countChar} 
+                            numChar={this.state.numChar}  
+                            countWord={this.state.countWord}
+                            seoRes={this.state.seoTool}
+                            seoTool={this.seoTool}
+                            />
                     </div>
                     </div>
             </div>
