@@ -10,19 +10,10 @@ function Navbar(props) {
       </div>
       <div className='search_container'>
         <input onChange={props.searchField} value={props.input} id='searchField' type ='text' placeholder ='Rechercher un mot ou chaîne'></input>
-        <button onClick={props.onSearch} value ='search'>
-          <img src='icon_search.svg' className='navbar_search_btn' alt='button_search' />
-        </button>
+        <img src='icon_search.svg' className='navbar_search_btn' alt='button_search' />
       </div>
-      <div className='search_method'>
-        <label htmlFor='word'>
-          <input type='radio' id='word' name='method' value='word' />
-          Rechercher par mot
-        </label>
-        <label htmlFor="string">
-          <input type='radio' id='string' name='method' value='string' />
-          Rechercher par chaîne
-        </label>
+      <div>
+        <p>Nb occurrence : {props.onSearch()}</p>
       </div>
     </div>
   );
