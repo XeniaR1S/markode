@@ -21,7 +21,7 @@ body {
 
 .navbar_container {
   display: flex;
-  background-color: #656565;
+  background-color: rgb(66, 66, 66);
   justify-content: space-around;
   align-items: center;
   height: 10vh;
@@ -55,7 +55,7 @@ body {
   justify-content: space-evenly;
 }
 
-/* ---------- END main.js ---------- */
+/* ---------- END navbar.js ---------- */
 
 /* ---------- BEGIN main.js ---------- */
 
@@ -147,6 +147,7 @@ body {
   font-weight: bold;
   font-size: 1em;
   cursor: pointer;
+  text-align: center;
 }
 
 .accordion {
@@ -180,3 +181,10 @@ body {
 }
 
 /* ---------- END NavTool.js --------- */
+
+/* ---------- BEGIN Footer.jsx --------- */
+.all-counters{
+  text-align: center;
+  color: rgb(196, 196, 196)
+}
+
