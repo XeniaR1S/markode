@@ -2,20 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 
 export default class NavTools extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      attributMd: ''
-    };
-    this.onClickAttribut = this.onClickAttribut.bind(this);
-  }
-  onClickAttribut(e) {
-    this.setState({
-      attributMd: e.target.value
-    });
-  }
   render() {
-    console.log(this.state.attributMd);
     return (
       <div className="navTool">
         <h3 className="titleTool">Outils markdown</h3>
@@ -26,31 +13,31 @@ export default class NavTools extends Component {
               <h3>Texte</h3>
             </a>
             {/* ------------------------ H1 ------------------------ */}
-            <button onClick={this.onClickAttribut} value="#">
+            <button onClick={this.props.onClickAttribut} value="# ">
               &lt;H1&gt;
             </button>
             {/* ------------------------ H2 ------------------------*/}
-            <button onClick={this.onClickAttribut} value="##">
+            <button onClick={this.props.onClickAttribut} value="## ">
               &lt;H2&gt;
             </button>
             {/* ------------------------ H3 ------------------------ */}
-            <button onClick={this.onClickAttribut} value="###">
+            <button onClick={this.props.onClickAttribut} value="### ">
               &lt;H3&gt;
             </button>
             {/* ------------------------ H4 ------------------------ */}
-            <button onClick={this.onClickAttribut} value="####">
+            <button onClick={this.props.onClickAttribut} value="#### ">
               &lt;H4&gt;
             </button>
             {/* ------------------------ H5 ------------------------ */}
-            <button onClick={this.onClickAttribut} value="#####">
+            <button onClick={this.props.onClickAttribut} value="##### ">
               &lt;H5&gt;
             </button>
             {/* ------------------------ H6 ------------------------ */}
-            <button onClick={this.onClickAttribut} value="#####">
+            <button onClick={this.props.onClickAttribut} value="##### ">
               &lt;H6&gt;
             </button>
             {/* ------------------------ p ------------------------ */}
-            <button onClick={this.onClickAttribut} value="#####">
+            <button onClick={this.props.onClickAttribut} value="##### ">
               &lt;p&gt;
             </button>
           </section>
@@ -60,10 +47,10 @@ export default class NavTools extends Component {
             <a href="#item2">
               <h3>Listes</h3>
             </a>
-            <button onClick={this.onClickAttribut} value="1.">
+            <button onClick={this.props.onClickAttribut} value="1. Votre texte">
               Listes numérotées
             </button>
-            <button onClick={this.onClickAttribut} value="-">
+            <button onClick={this.props.onClickAttribut} value="- Votre texte">
               Listes à puces
             </button>
           </section>
@@ -73,10 +60,10 @@ export default class NavTools extends Component {
             <a href="#item3">
               <h3>Blocs</h3>
             </a>
-            <button onClick={this.onClickAttribut} value="![alt](src)">
+            <button onClick={this.props.onClickAttribut} value="![alt](src)">
               Image
             </button>
-            <button onClick={this.onClickAttribut} value="`<code>`">
+            <button onClick={this.props.onClickAttribut} value="<code></code>">
               Blocs de code
             </button>
           </section>
@@ -86,20 +73,26 @@ export default class NavTools extends Component {
             <a href="#item4">
               <h3>Mise en forme</h3>
             </a>
-            <button onClick={this.onClickAttribut} value="** **">
+            <button
+              onClick={this.props.onClickAttribut}
+              value="**Votre texte**"
+            >
               Gras
             </button>
-            <button onClick={this.onClickAttribut} value="* *">
+            <button onClick={this.props.onClickAttribut} value="*Votre texte*">
               Italique
             </button>
-            <button onClick={this.onClickAttribut} value="*** ****">
+            <button
+              onClick={this.props.onClickAttribut}
+              value="***Votre texte****"
+            >
               Gras + Italique
             </button>
-            <button onClick={this.onClickAttribut} value="` `">
+            <button onClick={this.props.onClickAttribut} value="`Votre texte`">
               Arrière-plan gris
             </button>
             {/* <button onClick={this.onClickAttribut} value="-">Barré</button> */}
-            <button onClick={this.onClickAttribut} value=">">
+            <button onClick={this.props.onClickAttribut} value="> ">
               Citation
             </button>
           </section>
@@ -109,7 +102,7 @@ export default class NavTools extends Component {
             <a href="#item5">
               <h3>Mise en page</h3>
             </a>
-            <button onClick={this.onClickAttribut} value="___***">
+            <button onClick={this.props.onClickAttribut} value="___***">
               Ligne de séparation horizontale
             </button>
           </section>
