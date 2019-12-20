@@ -112,11 +112,13 @@ body {
   color: #c4c4c4;
   border: none;
 }
-.footer {
+.editorButtonsTwo {
+  visibility: hidden;
+}
+#footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 15%;
 }
 .counters {
   display: flex;
@@ -184,7 +186,13 @@ body {
 
 /* ---------- BEGIN Footer.jsx --------- */
 .all-counters{
-  text-align: center;
   color: rgb(196, 196, 196)
+}
+.counterText{
+  color: rgb(196, 196, 196);  
+}
+.seoButton{
+  width: 8em;
+  height: 3em;
 }
 

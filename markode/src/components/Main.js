@@ -125,7 +125,7 @@ class Main extends React.Component {
                                 searchWords={[this.state.input]}
                                 textToHighlight={this.state.text}
                                 />
-                                <button className="editorButtons">Exporter</button>    
+                                <button className="editorButtonsTwo">Exporter</button>    
                             </div>
                         </div>
                         <Footer 
