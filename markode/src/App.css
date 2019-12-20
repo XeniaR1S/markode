@@ -43,7 +43,7 @@ body {
   height: 5.85vh;
   width: 3.5vw;
   cursor: pointer;
- 
+
   color: white;
 }
 
@@ -112,6 +112,7 @@ body {
   color: #c4c4c4;
   border: none;
 }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -147,7 +148,7 @@ body {
 }
 
 .accordion section button {
-  width: 100%;
+  width: 92%;
   display: none;
   text-align: left;
   margin-left: 1.5em;
@@ -175,8 +176,7 @@ body {
 /* ---------- END NavTool.js --------- */
 
 /* ---------- BEGIN Footer.jsx --------- */
-.all-counters{
+.all-counters {
   text-align: center;
   color: rgb(196, 196, 196)
 }
-
