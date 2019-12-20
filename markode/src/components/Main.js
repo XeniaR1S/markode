@@ -103,8 +103,8 @@ class Main extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
                 </div>
+                    <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
             </div>
         )
     }

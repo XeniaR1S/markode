@@ -42,8 +42,6 @@ body {
   display: flex;
   height: 5.85vh;
   width: 3.5vw;
-  cursor: pointer;
- 
   color: white;
 }
 
