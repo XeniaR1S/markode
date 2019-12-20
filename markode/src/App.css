@@ -68,6 +68,12 @@ body {
   height: 90vh;
   margin-left: 0px;
 }
+
+.regroupBlocs {
+  display: flex;
+  flex-direction: column;
+}
+
 .textBlocs {
   display: flex;
   flex-direction: row;
