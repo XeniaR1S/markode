@@ -102,8 +102,6 @@ class Main extends React.Component {
                                 <button className="editorButtons">Exporter</button>    
                             </div>
                         </div>
-                        <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
-                    </div>
                     </div>
                     <Footer countChar={this.countChar} numChar={this.state.numChar}  countWord={this.state.countWord}/>
                 </div>
