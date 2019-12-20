@@ -55,6 +55,23 @@ class Main extends React.Component {
     deleteMD() {
         this.setState({mdText: ''})
     }
+    onSearch = () => {
+        let count = 0
+        let result
+        let input = this.state.input
+        let text = this.state.text
+        let table = text.split(/<\/?[a-z0-9]*>/g).join("").split(/[\s\.|\,|'|:|;|?|!|#]+/g)
+        if (table[table.length-1] === "") {
+            table.splice(table.length-1, 1)
+        }
+        for (let i = 0 ; i < table.length; i++){
+            if(input === table[i]){
+                count++
+            }
+        }
+        result = count
+        return result
+    }
     render() {
         return (
             <div>
@@ -77,6 +94,7 @@ class Main extends React.Component {
                         <div className="htmlBox">
                             <Highlighter 
                             className='textEditors'
+                            autoEscape={true}
                             searchWords={[this.state.input]}
                             textToHighlight={this.state.text}
                             />
