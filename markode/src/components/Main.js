@@ -101,11 +101,12 @@ class Main extends React.Component {
   };
   seoTool() {
     let text = this.state.text;
+    let lowerCaseText = text.toLowerCase()
     let filters = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'p'];
     let endFilters = ['/h1', '/h2', '/h3', '/h4', '/h5', '/h6', '/a', '/p'];
     let result = [0, 0, 0, 0, 0, 0, 0, 0];
     let keyword = this.state.input;
-    let table = text.split(/[\s|.|,|'|:|;|?|!|~|*|#|(|)|-|_||>|<]+/g);
+    let table = lowerCaseText.split(/[\s|.|,|'|:|;|?|!|~|*|#|(|)|-|_||>|<]+/g);
     for (let i = 0; i < table.length; i++) {
       for (let j = 0; j < filters.length; j++) {
         if (table[i] === filters[j]) {
